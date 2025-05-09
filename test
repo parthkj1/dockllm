@@ -1,0 +1,10 @@
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+model_name = "sshleifer/tiny-gpt2"
+save_dir = "./local-model"
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
+
+tokenizer.save_pretrained(save_dir)
+model.save_pretrained(save_dir)
